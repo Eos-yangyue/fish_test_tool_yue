@@ -9,6 +9,8 @@ for i in range(1, 10):
             print("%d*%d=%d" % (j, i, i * j), end="\t")
 """
 # 九九乘法表：第二种
+
+
 """
 # range=长度，（1, 10）只取前面的数，最后10不取，也就是123456789
 for i in range(1, 10):
@@ -32,6 +34,7 @@ def sum(num1, num2):
 print(sum(1,2))
 """
 # 数据类型检查函数
+"""
 def sum(num1, num2):
     if not(isinstance (num1, (int, float)) and isinstance (num2, (int, float))):
         raise TypeError('参数类型错误，不是int或float')
@@ -41,3 +44,14 @@ def sum(num1, num2):
 print(sum(1,2))
 # 不符合int和float的则会报错
 print(sum('环境','就'))
+"""
+# 修改字典中的值
+"""
+# 创建一个字典
+name={'ming': '哈哈哈', 'xng':'bb'}
+# 输出ming的值
+print(name['ming'])
+# 修改ming的值
+name['ming']='jjj'
+print(name['ming'])
+"""

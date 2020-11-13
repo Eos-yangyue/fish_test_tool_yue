@@ -1,4 +1,4 @@
-#  -*- coding: utf-8 -*-
+'''#  -*- coding: utf-8 -*-
 
 # 打印输出螺旋矩阵
 
@@ -433,4 +433,6 @@ if __name__ == '__main__':
 # 数值越界
 import Test.test_package.test1
 
-from Test.test_package.test1 import *
+from Test.test_package.test1 import *'''
+
+

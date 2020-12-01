@@ -1,24 +1,5 @@
 # 设计一个模拟银行管理系统，用户可以登录银行管理员账号，并且能够执行开户（包括录入开户人信息）
 # 查询、存钱、取钱（使用input输入数字）、改密码、转账、冻结、解冻、补办银行卡、销户的操作
-'''import sys
-import pymysql
-
-conn = pymysql.connect("10.20.1.56","root","")
-
-print("您是否有银行管理员账号：")
-print("1(已有账号)")
-print("2(没有账号，注册)")
-choose= int(input("请输入结果："))
-if choose == 1:
-    user_id = input("请输入已有银行管理员账号：")
-    user_pw = input("请输入银行管理员密码：")
-
-elif choose == 2:
-    user_id = input("请输入要注册的银行管理员账号：")
-    user_pw = input("请输入要注册的银行管理员密码：")
-else:
-    print("您输入的选择项暂未开放哦~")
-'''
 
 # -*- coding: utf-8 -*-
 """

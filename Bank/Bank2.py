@@ -2,6 +2,8 @@
 银行系统
 """
 
+import time
+
 
 # 存储银行信息
 class Bank_message:
@@ -28,7 +30,8 @@ class Bank_View:
         a = self.controller.judge_Admin(account, password)
         # 如果内部返回值是1，则登录成功
         if a == 1:
-            print("登录成功")
+            print("登录成功，请稍后.....")
+            time.sleep(2)
             self.__Bank_menu()
             return
         else:
@@ -39,8 +42,10 @@ class Bank_View:
     def __Bank_menu(self):
         print(
             """
-                    '开户【0】 销户【1】 查询余额【2】 存款【3】 取款【4】'
-                    '转账【5】 冻结【6】 解冻【7】  查询信息【8】退出【9】'
+            * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                开户【0】 销户【1】 查询余额【2】 存款【3】 取款【4】
+                转账【5】 冻结【6】 解冻【7】  查询信息【8】退出【9】
+            * * * * * * * * * * * * * * * * * * * * * * * * * * * 
             """
         )
 
@@ -89,9 +94,14 @@ class Bank_View:
             self.__select__menu()
 
 
-# 内部逻辑处理，object指这是一个可实例化的类
-class Bank_Controller(object):
-    # 管理员登录
+# 内部逻辑处理类
+class Bank_Controller(object):  # object指这是一个可实例化的类
+    # 用户字典
+    def __init__(self, allUsers):
+        self.allUsers = allUsers
+
+        # 管理员登录
+
     def judge_Admin(self, account, password):
         right_account = "admin"
         right_password = "123456"
@@ -105,7 +115,8 @@ class Bank_Controller(object):
     def Open_card(self):
         pass
 
-    # 销户
+        # 销户
+
     def Pin_card(self):
         pass
 

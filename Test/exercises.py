@@ -431,8 +431,8 @@ if __name__ == '__main__':
     # append 135 1345 remove 4 比较两个是否相等
 # 数组切片【1:5】取这个数组中第一位~第五位的数值
 # 数值越界
-import Test_exercises.test_package.test1
+import Test.test_package.test1
 
-from Test_exercises.test_package.test1 import *'''
+from Test.test_package.test1 import *'''
 
 

@@ -55,3 +55,19 @@ print(a[select_name][0])
 """"""
 
 #print(a)
+
+
+a = {}
+class p:
+    name = input("姓名：")
+    age = input("年龄：")
+    card = input("卡号：")
+    idcard = input("身份证：")
+
+xiaoming = [name, age, idcard]
+
+a[card] = xiaoming
+print(a)
+
+select_name = input("请输入银行卡号查询姓名：")
+print(a[select_name][0])

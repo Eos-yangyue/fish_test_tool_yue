@@ -12,6 +12,7 @@ class Card(object):
         self.cardMony = cardMoney
         self.cardLock = False  # 后面到了锁卡的时候需要有个卡的状态
 
+
 # 用户类
 class User(object):
     def __init__(self, name, idCard, phone, card):
@@ -19,6 +20,7 @@ class User(object):
         self.idCard = idCard
         self.phone = phone
         self.card = card
+
 
 # 后台管理类
 class Admin(object):
@@ -44,6 +46,7 @@ class Admin(object):
         print("*     退出（q）      *")
         print("****************************************************")
 
+    # 后台管理登录
     def adminOption(self):
         inputAdmin = input("请输入管理员账号：")
         if self.admin != inputAdmin:
@@ -369,7 +372,7 @@ def main():
     # allUsers = {}
 
     # 提款机对象
-    filepath = os.path.join(os.getcwd(), "allusers.txt")
+    filepath = os.path.join(os.getcwd(), "allusers")
     f = open(filepath, "rb")
     allUsers = pickle.load(f)
     atm = ATM(allUsers)

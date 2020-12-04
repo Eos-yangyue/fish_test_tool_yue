@@ -1,23 +1,28 @@
 """
 银行系统
 """
-
+import random
 import time
 
 
-# 存储银行信息
-class Bank_message:
-    bank_all_user = []
+# 存储用户信息
+class User(object):
+    def __init__(self, user_name, user_phone, usr_idCard):
+        self.user_name = user_name
+        self.user_phone = user_phone
+        self.usr_idCard = usr_idCard
 
-    def __init__(self, name="", age=0, id_card=0, money=0):
-        self.name = name
-        self.age = age
-        self.id_card = id_card
-        self.money = money
+
+# 存储银行信息
+class Bank(object):
+    def __init__(self, user_password, user_money, user_card_number):
+        self.user_password = user_password
+        self.user_money = user_money
+        self.user_card_number = user_card_number
 
 
 # 界面操作类
-class Bank_View:
+class Bank_View(object):
     def __init__(self):
         # 把逻辑处理类传进来，变成属性
         self.controller = Bank_Controller()
@@ -95,17 +100,17 @@ class Bank_View:
 
 
 # 内部逻辑处理类
+
 class Bank_Controller(object):  # object指这是一个可实例化的类
     # 用户字典
     def __init__(self, allUsers):
-        self.allUsers = allUsers
+        self.allUsers = allUsers()
 
-        # 管理员登录
-
+    # 管理员登录
     def judge_Admin(self, account, password):
         right_account = "admin"
         right_password = "123456"
-        # 如果传入值=默认值则返回1
+        # 如果 用户输入值=默认值 则返回1
         if account == right_account and password == right_password:
             return 1
         else:
@@ -113,10 +118,13 @@ class Bank_Controller(object):  # object指这是一个可实例化的类
 
     # 开户
     def Open_card(self):
-        pass
+        name = input("请输入开户姓名：")
+        phone = input("请输入电话号码：")
+        idCard = input("请输入身份证号：")
+        password = input("请设置银行卡密码：")
 
-        # 销户
 
+    # 销户
     def Pin_card(self):
         pass
 
@@ -136,15 +144,19 @@ class Bank_Controller(object):  # object指这是一个可实例化的类
     def Shift_money(self):
         pass
 
+    # 冻结
     def Freeze_card(self):
         pass
 
+    # 解冻
     def Thaw_card(self):
         pass
 
+    # 查询信息
     def Select_message(self):
         pass
 
+    # 退出
     def Exit(self):
         pass
 

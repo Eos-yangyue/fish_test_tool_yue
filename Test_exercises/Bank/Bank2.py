@@ -5,20 +5,22 @@ import random
 import time
 
 
+# 存储卡信息
+class Card(object):
+    def __init__(self, cardId, cardPasswd, cardMoney):
+        self.cardId = cardId
+        self.cardPasswd = cardPasswd
+        self.cardMony = cardMoney
+        self.cardLock = False  # 后面到了锁卡的时候需要有个卡的状态
+
+
 # 存储用户信息
 class User(object):
-    def __init__(self, user_name, user_phone, usr_idCard):
-        self.user_name = user_name
-        self.user_phone = user_phone
-        self.usr_idCard = usr_idCard
-
-
-# 存储银行信息
-class Bank(object):
-    def __init__(self, user_password, user_money, user_card_number):
-        self.user_password = user_password
-        self.user_money = user_money
-        self.user_card_number = user_card_number
+    def __init__(self, name, idCard, phone, card):
+        self.name = name
+        self.idCard = idCard
+        self.phone = phone
+        self.card = card
 
 
 # 界面操作类
@@ -38,6 +40,7 @@ class Bank_View(object):
             print("登录成功，请稍后.....")
             time.sleep(2)
             self.__Bank_menu()
+            self.__select__menu()
             return
         else:
             print("登录失败")
@@ -102,14 +105,11 @@ class Bank_View(object):
 # 内部逻辑处理类
 
 class Bank_Controller(object):  # object指这是一个可实例化的类
-    # 用户字典
-    def __init__(self, allUsers):
-        self.allUsers = allUsers()
 
     # 管理员登录
     def judge_Admin(self, account, password):
-        right_account = "admin"
-        right_password = "123456"
+        right_account = "1"
+        right_password = "1"
         # 如果 用户输入值=默认值 则返回1
         if account == right_account and password == right_password:
             return 1
@@ -118,11 +118,9 @@ class Bank_Controller(object):  # object指这是一个可实例化的类
 
     # 开户
     def Open_card(self):
-        name = input("请输入开户姓名：")
-        phone = input("请输入电话号码：")
-        idCard = input("请输入身份证号：")
-        password = input("请设置银行卡密码：")
-
+        name = input("请输入您的名字：")
+        idCard = input("请输入您的身份证号：")
+        phone = input("请输入您的电话号码：")
 
     # 销户
     def Pin_card(self):
@@ -159,6 +157,8 @@ class Bank_Controller(object):  # object指这是一个可实例化的类
     # 退出
     def Exit(self):
         pass
+
+
 
 
 user_yang = Bank_View()

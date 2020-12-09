@@ -4,7 +4,6 @@ import pickle
 import os
 
 
-# 银行卡类
 class Card(object):
     def __init__(self, cardId, cardPasswd, cardMoney):
         self.cardId = cardId
@@ -13,7 +12,6 @@ class Card(object):
         self.cardLock = False  # 后面到了锁卡的时候需要有个卡的状态
 
 
-# 用户类
 class User(object):
     def __init__(self, name, idCard, phone, card):
         self.name = name
@@ -22,7 +20,6 @@ class User(object):
         self.card = card
 
 
-# 后台管理类
 class Admin(object):
     admin = "1"
     passwd = "1"
@@ -46,7 +43,6 @@ class Admin(object):
         print("*     退出（q）      *")
         print("****************************************************")
 
-    # 后台管理登录
     def adminOption(self):
         inputAdmin = input("请输入管理员账号：")
         if self.admin != inputAdmin:
@@ -372,7 +368,7 @@ def main():
     # allUsers = {}
 
     # 提款机对象
-    filepath = os.path.join(os.getcwd(), "allusers")
+    filepath = os.path.join(os.getcwd(), "allusers.txt")
     f = open(filepath, "rb")
     allUsers = pickle.load(f)
     atm = ATM(allUsers)

@@ -31,14 +31,33 @@ def garbage_user_value():
     real_pay = float(input("请输入real_pay值："))
     outcome = float(input("请输入outcome值："))
     income = float(input("请输入income值："))
-    exchangeincome = float(input("请输入exchangeincome值："))
+    exchange_income = float(input("请输入exchange_income值："))
     cpl_reward = float(input("请输入cpl_reward值："))
     most_pure_pay = float(input("请输入most_pure_pay值："))
-    garbage_user_value = (real_pay + outcome - income - exchangeincome - cpl_reward) / most_pure_pay
+    garbage_user_value = (real_pay + outcome - income - exchange_income - cpl_reward) / most_pure_pay
     print("垃圾用户剩余价值更新为：", garbage_user_value)
+
+
+# 判断椰子积分用户是否满足兑换条件
+# 下列参与计算的数值均在tb_game_user_pay表中
+def user_coco_vlaue():
+    real_pay = float(input("请输入real_pay值："))
+    outcome = float(input("请输入outcome值："))
+    income = float(input("请输入income值："))
+    exchange_income = float(input("请输入exchange_income值："))
+    cpl_reward = float(input("请输入cpl_reward值："))
+    most_pure_pay = float(input("请输入most_pure_pay值："))
+    user_vlaue = (real_pay + outcome - income - exchange_income - cpl_reward)/most_pure_pay
+    print("结果为：", user_vlaue)
+    # 如果用户价值小于0.2(配置值)不可以兑换
+    if user_vlaue < 0.2:
+        print("不可以兑换")
+    else:
+        print("可以兑换")
 
 
 if __name__ == '__main__':
     # calculate_real_pay()
     # user_vlaue()
-    garbage_user_value()
+    # garbage_user_value()
+    user_coco_vlaue()

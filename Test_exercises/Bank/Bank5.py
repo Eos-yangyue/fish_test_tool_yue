@@ -16,6 +16,9 @@ class User(object):
         self.phone = phone
         self.password = password
 
+    def user_a(self):
+        return self.name
+
 
 class Card(object):
     pass
@@ -35,7 +38,7 @@ class Bank:
         bank_card = self.random_card()
 
         user = User(name, idCard, phone, password)
-        self.allUser[bank_card] = user
+        self.allUser = {bank_card:user}
         print("开户成功，您的卡号为：", bank_card)
 
     # 随机生成卡号
@@ -51,7 +54,7 @@ class Bank:
     # 查询
     def select_msg(self):
         bank_card = input("请输入银行卡号：")
-        print(type(bank_card))
+        print(self.allUser[bank_card].user_a())
 
 
 
